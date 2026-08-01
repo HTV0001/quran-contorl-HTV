@@ -26,7 +26,7 @@ padding:30px;
 }
 
 
-input{
+input, select{
 
 width:400px;
 
@@ -68,13 +68,42 @@ Quran Competition Control
 <input id="nameInput" placeholder="ކުރެއްވި ފަރާތްގެ ނަން">
 
 
-<br>
-
-
-<input id="categoryInput" placeholder="ކެޓަގަރީ">
-
 
 <br>
+
+
+
+<select id="categoryInput">
+
+
+<option>
+ކެޓަގަރީ ނަންގައިލާ
+</option>
+
+
+<option>6 އަހަރުން ދަށް (އެލް.ކޭ.ޖީ އިން މަތި)</option>
+
+<option>8 އަހަރުން ދަށް</option>
+
+<option>10 އަހަރުން ދަށް</option>
+
+<option>12 އަހަރުން ދަށް</option>
+
+<option>14 އަހަރުން ދަށް</option>
+
+<option>16 އަހަރުން ދަށް</option>
+
+<option>20 އަހަރުން ދަށް</option>
+
+<option>20 އަހަރުން މަތި</option>
+
+
+</select>
+
+
+
+<br>
+
 
 
 <button onclick="updateOverlay()">
@@ -82,6 +111,7 @@ Quran Competition Control
 UPDATE
 
 </button>
+
 
 
 
@@ -97,12 +127,16 @@ function updateOverlay(){
 
 channel.postMessage({
 
+
 name:
+
 document.getElementById("nameInput").value,
 
 
 category:
+
 document.getElementById("categoryInput").value
+
 
 
 });
@@ -111,10 +145,12 @@ document.getElementById("categoryInput").value
 }
 
 
+
 </script>
 
 
 
 </body>
+
 
 </html>
