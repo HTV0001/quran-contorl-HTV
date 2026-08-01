@@ -4,18 +4,18 @@ const lowerThird = document.getElementById("lowerThird");
 
 function resizeLowerThird(){
 
-    let words = name.innerText.trim().split(/\s+/).length;
+    const length = name.innerText.length;
 
 
-    if(words > 3){
+    if(length > 25){
 
-        lowerThird.classList.add("expanded");
+        lowerThird.style.width = (700 + (length * 8)) + "px";
 
     }
 
     else{
 
-        lowerThird.classList.remove("expanded");
+        lowerThird.style.width = "700px";
 
     }
 
@@ -30,7 +30,6 @@ const observer = new MutationObserver(()=>{
 });
 
 
-
 observer.observe(name,{
 
     childList:true,
@@ -40,7 +39,6 @@ observer.observe(name,{
     characterData:true
 
 });
-
 
 
 resizeLowerThird();
