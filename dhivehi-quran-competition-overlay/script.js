@@ -1,65 +1,46 @@
-// Quran Competition Lower Third
-// OBS Overlay Communication Script
-
-
-const channel = new BroadcastChannel("quran_lowerthird");
-
-
-// Get overlay elements
-
+const name = document.getElementById("participantName");
 const lowerThird = document.getElementById("lowerThird");
 
-const participantName = document.getElementById("participantName");
 
-const participantCategory = document.getElementById("participantCategory");
+function resizeLowerThird(){
 
-
-
-// Listen for messages from control.html
-
-channel.onmessage = function(event) {
+    let words = name.innerText.trim().split(/\s+/).length;
 
 
-    const data = event.data;
+    if(words > 3){
 
-
-
-    // SHOW lower third
-
-    if (data.show === true) {
-
-
-        participantName.innerText = data.name;
-
-        participantCategory.innerText = data.category;
-
-
-        lowerThird.classList.add("show");
-
+        lowerThird.classList.add("expanded");
 
     }
 
+    else{
 
-
-    // HIDE lower third
-
-    else if (data.show === false) {
-
-
-        lowerThird.classList.remove("show");
-
+        lowerThird.classList.remove("expanded");
 
     }
 
-
-};
-
+}
 
 
-// Optional: hide when page loads
 
-window.onload = function() {
+const observer = new MutationObserver(()=>{
 
-    lowerThird.classList.remove("show");
+    resizeLowerThird();
 
-};
+});
+
+
+
+observer.observe(name,{
+
+    childList:true,
+
+    subtree:true,
+
+    characterData:true
+
+});
+
+
+
+resizeLowerThird();
