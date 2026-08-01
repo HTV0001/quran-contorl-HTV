@@ -66,22 +66,33 @@ left:50%;
 transform:translateX(-50%) translateY(40px);
 
 
-width:700px;
 
-min-height:120px;
+min-width:700px;
+
+width:max-content;
+
+max-width:1200px;
+
+
+
+height:120px;
+
 
 
 display:flex;
 
 align-items:center;
 
-justify-content:space-between;
+justify-content:center;
+
 
 
 padding:15px 25px;
 
 
+
 border-radius:30px;
+
 
 
 background:
@@ -107,21 +118,10 @@ box-shadow:
 opacity:0;
 
 
+
 transition:
 
-width .4s ease,
-
 all .5s ease;
-
-
-}
-
-
-
-.lower-third.expanded{
-
-
-width:900px;
 
 
 }
@@ -149,11 +149,13 @@ width:90px;
 height:90px;
 
 
+
 display:flex;
 
 align-items:center;
 
 justify-content:center;
+
 
 
 flex-shrink:0;
@@ -170,7 +172,10 @@ max-width:75px;
 
 max-height:75px;
 
+
+
 object-fit:contain;
+
 
 
 filter:
@@ -185,17 +190,17 @@ drop-shadow(0 5px 15px rgba(0,0,0,.4));
 .text-box{
 
 
-flex:1;
-
 text-align:center;
 
 direction:rtl;
 
 
-padding:0 20px;
+
+padding:0 25px;
 
 
-overflow:hidden;
+
+min-width:400px;
 
 
 }
@@ -208,10 +213,13 @@ overflow:hidden;
 font-family:"MV AammuFK";
 
 
+
 font-size:45px;
 
 
+
 white-space:nowrap;
+
 
 
 background:
@@ -232,8 +240,9 @@ linear-gradient(
 
 background-clip:text;
 
-color:transparent;
 
+
+color:transparent;
 
 
 }
@@ -246,10 +255,13 @@ color:transparent;
 font-family:"Faruma";
 
 
+
 font-size:25px;
 
 
+
 margin-top:0px;
+
 
 
 background:
@@ -260,7 +272,7 @@ linear-gradient(
 
 #ffffff,
 
-#bdbdbf
+#bdbdbd
 
 );
 
@@ -270,8 +282,9 @@ linear-gradient(
 
 background-clip:text;
 
-color:transparent;
 
+
+color:transparent;
 
 
 }
