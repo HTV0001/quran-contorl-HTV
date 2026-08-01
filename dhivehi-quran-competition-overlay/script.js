@@ -1,53 +1,92 @@
-const name = document.getElementById("participantName");
-const lowerThird = document.getElementById("lowerThird");
+const name =
+document.getElementById("participantName");
 
 
-function resizeLowerThird(){
-
-    let textLength = name.innerText.length;
-
-
-    let newWidth = 700;
+const category =
+document.getElementById("participantCategory");
 
 
-    if(textLength > 20){
-
-        newWidth = 700 + ((textLength - 20) * 10);
-
-    }
+const lowerThird =
+document.getElementById("lowerThird");
 
 
-    if(newWidth > 1100){
 
-        newWidth = 1100;
-
-    }
+function updateOverlay(){
 
 
-    lowerThird.style.width = newWidth + "px";
+let savedName =
+localStorage.getItem("contestantName");
+
+
+let savedCategory =
+localStorage.getItem("contestantCategory");
+
+
+
+if(savedName){
+
+name.innerHTML=savedName;
 
 }
 
 
 
-resizeLowerThird();
+if(savedCategory){
+
+category.innerHTML=savedCategory;
+
+}
 
 
 
-const observer = new MutationObserver(function(){
-
-    resizeLowerThird();
-
-});
+resize();
 
 
+}
 
-observer.observe(name, {
 
-    childList:true,
 
-    subtree:true,
+function resize(){
 
-    characterData:true
 
-});
+let length =
+name.innerText.length;
+
+
+
+let width = 700;
+
+
+
+if(length > 20){
+
+width = 700 + ((length-20)*10);
+
+}
+
+
+
+if(width > 1200){
+
+width = 1200;
+
+}
+
+
+
+lowerThird.style.width =
+width+"px";
+
+
+}
+
+
+
+window.addEventListener(
+"storage",
+updateOverlay
+);
+
+
+
+updateOverlay();
