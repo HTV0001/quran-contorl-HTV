@@ -2,20 +2,17 @@
 
 font-family:"MV AammuFK";
 
-src:url("./MV_AammuFK_Regular.ttf") format("truetype");
-
-font-display:block;
+src:url("./MV_AammuFK_Regular.ttf");
 
 }
+
 
 
 @font-face {
 
 font-family:"Faruma";
 
-src:url("./Faruma_Regular.ttf") format("truetype");
-
-font-display:block;
+src:url("./Faruma_Regular.ttf");
 
 }
 
@@ -63,7 +60,7 @@ bottom:60px;
 left:50%;
 
 
-transform:translateX(-50%) translateY(40px);
+transform:translateX(-50%);
 
 
 
@@ -109,26 +106,10 @@ box-shadow:
 
 
 
-opacity:1;
-
-
-
 transition:
 
-width .4s ease,
+width .4s ease;
 
-transform .5s ease;
-
-
-
-}
-
-
-
-.lower-third.show{
-
-
-transform:translateX(-50%) translateY(0);
 
 
 }
@@ -172,11 +153,6 @@ object-fit:contain;
 
 
 
-filter:
-
-drop-shadow(0 5px 15px rgba(0,0,0,.4));
-
-
 }
 
 
@@ -188,12 +164,7 @@ flex:1;
 
 text-align:center;
 
-direction:rtl;
-
-
-
 padding:0 25px;
-
 
 
 }
@@ -213,28 +184,7 @@ white-space:nowrap;
 
 
 
-background:
-
-linear-gradient(
-
-180deg,
-
-#ffffff,
-
-#cfcfcf
-
-);
-
-
-
--webkit-background-clip:text;
-
-background-clip:text;
-
-
-
-color:transparent;
-
+color:white;
 
 
 }
@@ -250,31 +200,7 @@ font-size:25px;
 
 
 
-margin-top:0;
-
-
-
-background:
-
-linear-gradient(
-
-180deg,
-
-#ffffff,
-
-#bdbdbd
-
-);
-
-
-
--webkit-background-clip:text;
-
-background-clip:text;
-
-
-
-color:transparent;
+color:white;
 
 
 
