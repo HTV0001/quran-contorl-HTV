@@ -68,7 +68,7 @@ transform:translateX(-50%) translateY(40px);
 
 width:700px;
 
-height:120px;
+min-height:120px;
 
 
 display:flex;
@@ -82,7 +82,6 @@ padding:15px 25px;
 
 
 border-radius:30px;
-
 
 
 background:
@@ -110,7 +109,19 @@ opacity:0;
 
 transition:
 
+width .4s ease,
+
 all .5s ease;
+
+
+}
+
+
+
+.lower-third.expanded{
+
+
+width:900px;
 
 
 }
@@ -121,6 +132,7 @@ all .5s ease;
 
 
 opacity:1;
+
 
 transform:translateX(-50%) translateY(0);
 
@@ -142,6 +154,9 @@ display:flex;
 align-items:center;
 
 justify-content:center;
+
+
+flex-shrink:0;
 
 
 }
@@ -177,6 +192,12 @@ text-align:center;
 direction:rtl;
 
 
+padding:0 20px;
+
+
+overflow:hidden;
+
+
 }
 
 
@@ -190,6 +211,9 @@ font-family:"MV AammuFK";
 font-size:45px;
 
 
+white-space:nowrap;
+
+
 background:
 
 linear-gradient(
@@ -201,6 +225,7 @@ linear-gradient(
 #cfcfcf
 
 );
+
 
 
 -webkit-background-clip:text;
@@ -227,7 +252,6 @@ font-size:25px;
 margin-top:0px;
 
 
-
 background:
 
 linear-gradient(
@@ -236,9 +260,10 @@ linear-gradient(
 
 #ffffff,
 
-#bdbdbd
+#bdbdbf
 
 );
+
 
 
 -webkit-background-clip:text;
