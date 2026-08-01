@@ -11,38 +11,8 @@ document.getElementById("lowerThird");
 
 
 
-function updateOverlay(){
-
-
-let savedName =
-localStorage.getItem("contestantName");
-
-
-let savedCategory =
-localStorage.getItem("contestantCategory");
-
-
-
-if(savedName){
-
-name.innerHTML=savedName;
-
-}
-
-
-
-if(savedCategory){
-
-category.innerHTML=savedCategory;
-
-}
-
-
-
-resize();
-
-
-}
+const channel =
+new BroadcastChannel("quranOverlay");
 
 
 
@@ -60,7 +30,7 @@ let width = 700;
 
 if(length > 20){
 
-width = 700 + ((length-20)*10);
+width = 700 + ((length - 20) * 10);
 
 }
 
@@ -75,18 +45,30 @@ width = 1200;
 
 
 lowerThird.style.width =
-width+"px";
+width + "px";
 
 
 }
 
 
 
-window.addEventListener(
-"storage",
-updateOverlay
-);
+
+channel.onmessage = function(event){
+
+
+name.innerHTML =
+event.data.name;
+
+
+category.innerHTML =
+event.data.category;
+
+
+resize();
+
+
+};
 
 
 
-updateOverlay();
+resize();
