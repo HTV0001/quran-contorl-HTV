@@ -7,7 +7,6 @@ src:url("./MV_AammuFK_Regular.ttf");
 }
 
 
-
 @font-face {
 
 font-family:"Faruma";
@@ -152,7 +151,6 @@ max-height:75px;
 object-fit:contain;
 
 
-
 }
 
 
@@ -179,9 +177,7 @@ font-family:"MV AammuFK";
 font-size:45px;
 
 
-
 white-space:nowrap;
-
 
 
 color:white;
@@ -199,9 +195,7 @@ font-family:"Faruma";
 font-size:25px;
 
 
-
 color:white;
-
 
 
 }
