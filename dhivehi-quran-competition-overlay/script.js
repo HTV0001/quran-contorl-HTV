@@ -4,33 +4,45 @@ const lowerThird = document.getElementById("lowerThird");
 
 function resizeLowerThird(){
 
-    const length = name.innerText.length;
+    let textLength = name.innerText.length;
 
 
-    if(length > 25){
+    let newWidth = 700;
 
-        lowerThird.style.width = (700 + (length * 8)) + "px";
+
+    if(textLength > 20){
+
+        newWidth = 700 + ((textLength - 20) * 10);
+
+    }
+
+
+    if(newWidth > 1100){
+
+        newWidth = 1100;
 
     }
 
-    else{
 
-        lowerThird.style.width = "700px";
-
-    }
+    lowerThird.style.width = newWidth + "px";
 
 }
 
 
 
-const observer = new MutationObserver(()=>{
+resizeLowerThird();
+
+
+
+const observer = new MutationObserver(function(){
 
     resizeLowerThird();
 
 });
 
 
-observer.observe(name,{
+
+observer.observe(name, {
 
     childList:true,
 
@@ -39,6 +51,3 @@ observer.observe(name,{
     characterData:true
 
 });
-
-
-resizeLowerThird();
