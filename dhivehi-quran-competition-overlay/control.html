@@ -2,64 +2,51 @@
 
 <html lang="dv" dir="rtl">
 
+
 <head>
 
 <meta charset="UTF-8">
 
-<title>Quran Lower Third Control</title>
+<title>Quran Overlay Control</title>
 
 
 <style>
 
 body{
 
+font-family:Arial;
+
 background:#111;
 
 color:white;
 
-font-family:Arial;
+text-align:center;
 
 padding:30px;
 
 }
 
 
-input,select,button{
+input{
 
-width:350px;
+width:400px;
 
-padding:12px;
+padding:15px;
+
+font-size:22px;
 
 margin:10px;
-
-font-size:18px;
-
-border-radius:10px;
 
 }
 
 
 button{
 
-border:none;
+padding:15px 40px;
+
+font-size:22px;
 
 cursor:pointer;
-
-color:white;
-
-}
-
-
-.show{
-
-background:#008f50;
-
-}
-
-
-.hide{
-
-background:#b88920;
 
 }
 
@@ -70,124 +57,72 @@ background:#b88920;
 </head>
 
 
+
 <body>
 
 
-
-<h2>
-Quran Competition Lower Third
-</h2>
+<h1>
+Quran Competition Control
+</h1>
 
 
 
 <input id="nameInput"
-placeholder="ނަން"
-dir="rtl">
+placeholder="ކުރެއްވި ފަރާތްގެ ނަން">
 
-
-
-<select id="categoryInput" dir="rtl">
-
-
-<option>
-6 އަހަރުން ދަށް (އެލް.ކޭ.ޖީ އިން މަތި)
-</option>
-
-
-<option>
-8 އަހަރުން ދަށް
-</option>
-
-
-<option>
-10 އަހަރުން ދަށް
-</option>
-
-
-<option>
-12 އަހަރުން ދަށް
-</option>
-
-
-<option>
-14 އަހަރުން ދަށް
-</option>
-
-
-<option>
-16 އަހަރުން ދަށް
-</option>
-
-
-<option>
-20 އަހަރުން ދަށް
-</option>
-
-
-<option>
-20 އަހަރުން މަތި
-</option>
-
-
-</select>
 
 
 <br>
 
 
-<button class="show" onclick="showLT()">
-SHOW
-</button>
+
+<input id="categoryInput"
+placeholder="ކެޓަގަރީ">
 
 
-<button class="hide" onclick="hideLT()">
-HIDE
+
+<br>
+
+
+
+<button onclick="updateOverlay()">
+
+UPDATE
+
 </button>
+
 
 
 
 <script>
 
 
-const channel =
-new BroadcastChannel("quran_lowerthird");
+function updateOverlay(){
 
 
 
-function showLT(){
+localStorage.setItem(
+
+"contestantName",
+
+document.getElementById("nameInput").value
+
+);
 
 
-channel.postMessage({
 
-show:true,
+localStorage.setItem(
 
+"contestantCategory",
 
-name:
-document.getElementById("nameInput").value,
-
-
-category:
 document.getElementById("categoryInput").value
 
+);
 
-});
 
 
 }
 
-
-
-function hideLT(){
-
-
-channel.postMessage({
-
-show:false
-
-});
-
-
-}
 
 
 </script>
@@ -195,5 +130,6 @@ show:false
 
 
 </body>
+
 
 </html>
