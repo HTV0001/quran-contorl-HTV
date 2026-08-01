@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="dv" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Lower Third Control</title>
+
+
+<style>
+
+body{
+
+background:#111;
+
+color:white;
+
+font-family:Arial;
+
+padding:30px;
+
+}
+
+
+input,select,button{
+
+width:350px;
+
+padding:12px;
+
+margin:8px;
+
+font-size:18px;
+
+}
+
+
+
+button{
+
+background:#008044;
+
+color:white;
+
+border:0;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h2>Quran Competition Lower Third</h2>
+
+
+<input id="nameInput"
+placeholder="ނަން"
+dir="rtl">
+
+
+
+<select id="categoryInput" dir="rtl">
+
+
+<option>6 އަހަރުން ދަށް (އެލް.ކޭ.ޖީ އިން މަތި)</option>
+
+<option>8 އަހަރުން ދަށް</option>
+
+<option>10 އަހަރުން ދަށް</option>
+
+<option>12 އަހަރުން ދަށް</option>
+
+<option>14 އަހަރުން ދަށް</option>
+
+<option>16 އަހަރުން ދަށް</option>
+
+<option>20 އަހަރުން ދަށް</option>
+
+<option>20 އަހަރުން މަތި</option>
+
+
+</select>
+
+
+<br>
+
+
+<button onclick="showLT()">
+SHOW
+</button>
+
+
+<button onclick="hideLT()">
+HIDE
+</button>
+
+
+
+<script>
+
+
+function update(data){
+
+localStorage.setItem(
+"lowerThird",
+JSON.stringify(data)
+);
+
+}
+
+
+
+function showLT(){
+
+
+update({
+
+show:true,
+
+name:
+document.getElementById("nameInput").value,
+
+
+category:
+document.getElementById("categoryInput").value
+
+
+});
+
+
+}
+
+
+
+function hideLT(){
+
+
+update({
+
+show:false
+
+});
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
